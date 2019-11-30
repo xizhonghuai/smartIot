@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>物联网数据监测平台</title>
+    <meta charset="UTF-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="Blue Moon - Responsive Admin Dashboard" name="description"/>
+    <meta content="Notifications, Admin, Dashboard, Bootstrap3, Sass, transform, CSS3, HTML5, Web design, UI Design, Responsive Dashboard, Responsive Admin, Admin Theme, Best Admin UI, Bootstrap Theme, Wrapbootstrap, Bootstrap, bootstrap.gallery"
+          name="keywords"/>
+    <meta content="Bootstrap Gallery" name="author"/>
+    <link href="img/favicon.ico" rel="shortcut icon">
+
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/new.css" rel="stylesheet">
+    <link href="css/charts-graphs.css" rel="stylesheet">
+    <!-- Datepicker CSS -->
+    <link href="css/datepicker.css" rel="stylesheet" type="text/css">
+
+    <link href="fonts/font-awesome.min.css" rel="stylesheet">
+
+    <link href="http://cache.amap.com/lbs/static/main1119.css" rel="stylesheet"/>
+
+    <!-- HTML5 shiv and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="js/html5shiv.js"></script>
+    <script src="js/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+
+<!-- Header Start -->
+<header>
+    <a class="logo" href="index.html" style="width: 500px">
+        <!--<img src="img/logo.png" alt="Logo"/>-->
+        <span id="systemTitle" style="font-family:黑体;font-size:25px;font-weight:bold;color:#0089BF"></span>
+    </a>
+    <div class="pull-right">
+        <ul class="clearfix" id="mini-nav">
+            <li class="list-box hidden-xs">
+                <a data-target="#modalMd" data-toggle="modal" href="#">
+                    <span class="text-white">Code</span> <i class="fa fa-code"></i>
+                </a>
+                <!-- Modal -->
+                <div aria-hidden="true" aria-labelledby="myModalLabel5" class="modal fade" id="modalMd" role="dialog"
+                     tabindex="-1">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button aria-hidden="true" class="close" data-dismiss="modal" type="button">&times;
+                                </button>
+                                <h4 class="modal-title text-danger" id="myModalLabel5">Coding Style </h4>
+                            </div>
+                            <div class="modal-body">
+                                <img alt="Esquare Admin" src="img/documentation.png">
+                            </div>
+                            <div class="modal-footer">
+                                <button class="btn btn-danger" data-dismiss="modal" type="button"><i
+                                        class="fa fa-times"></i> Close
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li class="list-box dropdown">
+                <a class="dropdown-toggle" data-toggle="dropdown" href="#" id="drop5" role="button">
+                    <i class="fa fa-film"></i>
+                </a>
+                <span class="info-label info-bg">9+</span>
+                <ul class="dropdown-menu stats-widget clearfix">
+                    <li>
+                        <h5 class="text-success">$37895</h5>
+                        <p>Revenue <span class="text-success">+2%</span></p>
+                        <div class="progress progress-mini">
+                            <div aria-valuemax="100" aria-valuemin="0" aria-valuenow="40"
+                                 class="progress-bar progress-bar-success" role="progressbar" style="width: 40%">
+                                <span class="sr-only">40% Complete (success)</span>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <h5 class="text-warning">47,892</h5>
+                        <p>Downloads <span class="text-warning">+39%</span></p>
+                        <div class="progress progress-mini">
+                            <div aria-valuemax="100" aria-valuemin="0" aria-valuenow="40"
+                                 class="progress-bar progress-bar-warning" role="progressbar" style="width: 40%">
+                                <span class="sr-only">40% Complete (warning)</span>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <h5 class="text-danger">28214</h5>
+                        <p>Uploads <span class="text-danger">-7%</span></p>
+                        <div class="progress progress-mini">
+                            <div aria-valuemax="100" aria-valuemin="0" aria-valuenow="40"
+                                 class="progress-bar progress-bar-danger" role="progressbar" style="width: 40%">
+                                <span class="sr-only">40% Complete (danger)</span>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </li>
+            <li class="list-box dropdown">
+                <a class="dropdown-toggle" data-toggle="dropdown" href="#" id="drop5" role="button">
+                    <i class="fa fa-calendar"></i>
+                </a>
+                <span class="info-label success-bg">6</span>
+                <ul class="dropdown-menu server-activity">
+                    <li>
+                        <p><i class="fa fa-flag text-info"></i> Pending request<span class="time">3 hrs</span></p>
+                    </li>
+                    <li>
+                        <p><i class="fa fa-fire text-warning"></i> Server Crashed<span class="time">3mins</span></p>
+                    </li>
+                    <li>
+                        <p><i class="fa fa-user text-success"></i> 3 New users<span class="time">1 min</span></p>
+                    </li>
+                    <li>
+                        <p><i class="fa fa-bell text-danger"></i>9 pending requests<span class="time">5 min</span></p>
+                    </li>
+                    <li>
+                        <p><i class="fa fa-plane text-info"></i> Performance<span class="time">25 min</span></p>
+                    </li>
+                    <li>
+                        <p><i class="fa fa-envelope text-warning"></i>12 new emails<span class="time">25 min</span></p>
+                    </li>
+                    <li>
+                        <p><i class="fa fa-cog icon-spin text-success"></i> Location settings<span
+                                class="time">4 hrs</span></p>
+                    </li>
+                </ul>
+            </li>
+
+        </ul>
+    </div>
+</header>
+<!-- Header End -->
+
+<!-- Main Container start -->
+<div class="dashboard-container">
+
+    <div class="container">
+        <!-- Top Nav Start -->
+        <div id='cssmenu'>
+            <ul>
+                <li>
+                    <a href='index.html'>
+                        <i class="fa fa-dashboard"></i>
+                        首页
+                    </a>
+                </li>
+                <li class='active'>
+                    <a href="#">
+                        <i class="fa fa-align-justify"></i>
+                        运行状况
+                    </a>
+                </li>
+
+
+                <li>
+                    <a href="realTimeData.html">
+                        <i class="fa fa-th-list"></i>
+                        实时数据
+                    </a>
+                </li>
+
+
+                <li>
+                    <a href="camera.html">
+                        <i class="fa  fa-video-camera"></i>
+                        图像监控
+                    </a>
+                </li>
+
+
+                <li>
+                    <a href="historyData.html">
+                        <i class="fa fa-clock-o"></i>
+                        历史数据
+                    </a>
+                </li>
+
+                <!--
+
+                                <li>
+                                    <a href="#">
+                                        <i class="fa fa-bar-chart-o"></i>
+                                        统计分析
+                                    </a>
+                                </li>
+                -->
+
+                <li>
+                    <a href="debug.html">
+                        <i class="fa fa-cloud"></i>
+                        终端控制
+                    </a>
+                </li>
+
+
+            </ul>
+        </div>
+
+
+        <!-- Dashboard Wrapper Start -->
+        <div class="dashboard-wrapper-lg" style="min-height:520px">
+
+            <div class="row">
+                <div class="col-lg-3 col-md-3 col-sm-6">
+                    <div class="mini-widget">
+                        <div class="mini-widget-heading clearfix">
+                            <div class="pull-left">接入设备总数量</div>
+                            <div class="pull-right"></div>
+                        </div>
+                        <div class="mini-widget-body clearfix">
+                            <div class="pull-left">
+                                <i class="fa fa-globe"></i>
+                            </div>
+                            <div id="dev_count" class="pull-right number">-</div>
+                        </div>
+                        <!--                 <div class="mini-widget-footer center-align-text">
+                                          <span>Better than last week</span>
+                                        </div> -->
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-3 col-sm-6">
+                    <div class="mini-widget">
+                        <div class="mini-widget-heading clearfix">
+                            <div class="pull-left">设备在线数量</div>
+                            <div class="pull-right"></div>
+                        </div>
+                        <div class="mini-widget-body clearfix">
+                            <div class="pull-left">
+                                <i class="fa fa-twitter"></i>
+                            </div>
+                            <div id="dev_online" class="pull-right number">-</div>
+                        </div>
+                        <!--                 <div class="mini-widget-footer center-align-text">
+                                          <span>Better than last week</span>
+                                        </div> -->
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-3 col-sm-6">
+                    <div class="mini-widget mini-widget-grey">
+                        <div class="mini-widget-heading clearfix">
+                            <div class="pull-left">设备离线数量</div>
+                            <div class="pull-right"></div>
+                        </div>
+                        <div class="mini-widget-body clearfix">
+                            <div class="pull-left">
+                                <i class="fa fa-upload"></i>
+                            </div>
+                            <div id="dev_notOnline" class="pull-right number">-</div>
+                        </div>
+                        <!--                 <div class="mini-widget-footer center-align-text">
+                                          <span>Better than last week</span>
+                                        </div> -->
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-3 col-sm-6">
+                    <div class="mini-widget">
+                        <div class="mini-widget-heading clearfix">
+                            <div class="pull-left">设备在线率</div>
+                            <div class="pull-right"></div>
+                        </div>
+                        <div class="mini-widget-body clearfix">
+                            <div class="pull-left">
+                                <i class="fa fa-coffee"></i>
+                            </div>
+                            <div id="dev_zxl" class="pull-right number">0%</div>
+                        </div>
+                        <!--                 <div class="mini-widget-footer center-align-text">
+                                          <span>Better than last week</span>
+                                        </div> -->
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+
+
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" id="container1" style="height: 550px;"></div>
+
+            </div>
+
+
+
+        </div>
+
+
+        <footer>
+            <p id="companyName"></p>
+        </footer>
+
+    </div>
+</div>
+<!-- Main Container end -->
+
+<script src="js/jquery.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/jquery.scrollUp.js"></script>
+
+<!-- jQuery UI JS -->
+<script src="js/jquery-ui-v1.10.3.js"></script>
+
+<!-- Just Gage -->
+<!--<script src="js/justgage/justgage.js"></script>-->
+<script src="js/justgage/raphael.2.1.0.min.js"></script>
+
+<!-- Flot Charts -->
+<script src="js/flot/jquery.flot.js"></script>
+<script src="js/flot/jquery.flot.orderBar.min.js"></script>
+<script src="js/flot/jquery.flot.stack.min.js"></script>
+<script src="js/flot/jquery.flot.pie.min.js"></script>
+<script src="js/flot/jquery.flot.tooltip.min.js"></script>
+<script src="js/flot/jquery.flot.resize.min.js"></script>
+
+<!-- Custom JS -->
+<script src="js/menu.js"></script>
+
+<!-- echarts JS -->
+<script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/echarts.min.js"></script>
+<script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts-gl/echarts-gl.min.js"></script>
+<script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts-stat/ecStat.min.js"></script>
+<script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/extension/dataTool.min.js"></script>
+<script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/map/js/china.js"></script>
+<script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/map/js/world.js"></script>
+<script type="text/javascript" src="https://api.map.baidu.com/api?v=2.0&ak=gqopqYo3H9px6AW32eoGuoUz59EcrqEx"></script>
+<script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/extension/bmap.min.js"></script>
+<script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/simplex.js"></script>
+<script type="text/javascript" src="js/common.js"></script>
+
+
+
+<script type="text/javascript">
+
+
+    var token = GetData("../getToken",null);
+    var tokenData = JSON.parse(token.result);
+
+    document.getElementById("systemTitle").innerHTML = "&nbsp;"+tokenData.systemTitle;
+    document.getElementById("companyName").innerHTML = "©&nbsp;"+tokenData.companyName+"&nbsp;2020";
+
+
+
+
+    function getStatistics() {
+
+        var  data = GetData("../getDeviceRealTimeData", {"params2":0,"userId":tokenData.id});
+
+
+        if (data != null) {
+
+            var dev_count = data.length;
+            var dev_online = 0;
+            var dev_notOnline = 0;
+            var dev_zxl = 0;
+
+
+
+            for (var i = 0; i < dev_count; i++) {
+                if (!checkTM(data[i].cyDate)) {
+                    dev_notOnline = dev_notOnline + 1;
+                }
+            }
+
+            dev_online =  dev_count-dev_notOnline;
+
+            document.getElementById("dev_count").innerHTML = dev_count;
+            document.getElementById("dev_online").innerHTML = (dev_online);
+            document.getElementById("dev_notOnline").innerHTML =  dev_notOnline;
+            document.getElementById("dev_zxl").innerHTML = parseInt(((100 * dev_online) / dev_count ))+"%";
+
+
+
+        }
+
+
+    }
+
+    getStatistics();
+
+    var dom = document.getElementById("container1");
+    var myChart = echarts.init(dom);
+    var app = {};
+
+
+
+    var  data = GetData("../getDeviceBasicsInfo", {"userId":tokenData.id});
+
+    var convertData = [];
+
+    for (var i = 0;i<data.length;i++){
+
+        var point_dev = new Object();
+        point_dev.name = data[i].deviceName;
+        point_dev.value = [data[i].latitude,data[i].longitude,10];
+
+        convertData.push(point_dev);
+
+    }
+
+
+
+
+
+
+
+
+    var option = {
+        backgroundColor: '#f7f7f7',
+        title: {
+            text: '终端预警情况监测',
+            subtext: "更新时间:"+ DateFormat(new Date()),
+
+            left: 'center',
+            textStyle: {
+                color: '#000000'
+            }
+        },
+        tooltip : {
+            trigger: 'item'
+        },
+
+        geo: {
+            map: 'china',
+            label: {
+                emphasis: {
+                    show: false
+                }
+            },
+            roam: true,
+            itemStyle: {
+                normal: {
+                    areaColor: '#2ca6e5',
+                    borderColor: '#111'
+                },
+                emphasis: {
+                    areaColor: '#2a333d'
+                }
+            }
+        },
+        series : [
+
+            {
+
+                type: 'effectScatter',
+                coordinateSystem: 'geo',
+                data: convertData,
+                encode: {
+                    value: 2
+                },
+                symbolSize: function (val) {
+                    return 50;
+                },
+                showEffectOn: 'render',
+                rippleEffect: {
+                    brushType: 'stroke'
+                },
+                hoverAnimation: true,
+                // label: {
+                //     normal: {
+                //         formatter: '{b}',
+                //         position: 'right',
+                //         show: true
+                //     }
+                // },
+                itemStyle: {
+                    normal: {
+                        color: '#f4e925',
+                        shadowBlur: 10,
+                        shadowColor: '#333'
+                    }
+                },
+                zlevel: 1
+            }
+        ]
+    };
+    if (option && typeof option === "object") {
+        myChart.setOption(option, true);
+    }
+</script>
+
+</body>
+</html>

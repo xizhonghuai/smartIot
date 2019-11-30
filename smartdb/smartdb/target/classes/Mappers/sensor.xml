@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.dao.Mappers">
+
+    <select id="getSensorBind" parameterType="com.entity.SensorBind" resultType="com.entity.SensorBind">
+        <if test="deviceId != null">
+            select * from sensorbind
+            <where>
+
+                <if test="deviceId != null"> deviceId = #{deviceId}</if>
+                <if test="sensorField != null">  and  sensorField = #{sensorField}</if>
+
+            </where>
+
+
+
+        </if>
+    </select>
+
+<!--    <update id="updateSensorBind" parameterType="com.entity.SensorBind">-->
+<!--        <if test="deviceId != null and id !=null" >-->
+<!--            update sensorbind-->
+<!--            <set>-->
+<!--                <if test="bindField != null">-->
+<!--                    bindField = #{bindField},-->
+<!--                </if>-->
+<!--                <if test="propertyName != null">-->
+<!--                    propertyName = #{propertyName},-->
+<!--                </if>-->
+<!--                <if test="unit != null">-->
+<!--                    unit = #{unit},-->
+<!--                </if>-->
+<!--                <if test="warnY != null">-->
+<!--                    warnY = #{warnY},-->
+<!--                </if>-->
+<!--                <if test="warnR != null">-->
+<!--                    warnR = #{warnR},-->
+<!--                </if>-->
+<!--            </set>-->
+<!--            where deviceId = #{deviceId}   and id = #{id}-->
+<!--        </if>-->
+<!--    </update>-->
+
+    <delete id="deleteSensorBind" parameterType="com.entity.SensorBind">
+        <if test="deviceId !=null and id !=null">
+
+            delete from SensorBind where deviceId=#{deviceId} and id = #{id}
+
+        </if>
+    </delete>
+
+
+    <insert id="addSensorBind"  parameterType="com.entity.SensorBind">
+        <if test="deviceId != null">
+            insert into SensorBind
+            (deviceId,sensorField,propertyName,unit,warnY,warnR)
+            values(#{deviceId},#{sensorField},#{propertyName},#{unit},#{warnY},#{warnR})
+        </if>
+    </insert>
+
+
+
+
+</mapper>

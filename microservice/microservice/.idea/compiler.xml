@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="microservice-api" />
+        <module name="microservice-APIGateway" />
+        <module name="microservice-consumer-hi" />
+        <module name="microservice-eureka" />
+        <module name="microservice-provide-hi" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="microservice" target="1.8" />
+      <module name="microservice-api" target="1.8" />
+      <module name="microservice-APIGateway" target="1.8" />
+      <module name="microservice-consumer-hi" target="1.8" />
+      <module name="microservice-eureka" target="1.8" />
+      <module name="microservice-provide-hi" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+</project>

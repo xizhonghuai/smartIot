@@ -1,0 +1,850 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>平台</title>
+    <meta charset="UTF-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="Blue Moon - Responsive Admin Dashboard" name="description"/>
+    <meta content="Notifications, Admin, Dashboard, Bootstrap3, Sass, transform, CSS3, HTML5, Web design, UI Design, Responsive Dashboard, Responsive Admin, Admin Theme, Best Admin UI, Bootstrap Theme, Wrapbootstrap, Bootstrap, bootstrap.gallery"
+          name="keywords"/>
+    <meta content="Bootstrap Gallery" name="author"/>
+    <link href="img/favicon.ico" rel="shortcut icon">
+
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/new.css" rel="stylesheet">
+    <link href="css/charts-graphs.css" rel="stylesheet">
+    <!-- Datepicker CSS -->
+    <link href="css/datepicker.css" rel="stylesheet" type="text/css">
+
+    <link href="fonts/font-awesome.min.css" rel="stylesheet">
+
+    <link href="http://cache.amap.com/lbs/static/main1119.css" rel="stylesheet"/>
+
+    <link href="css/plugins/jqgrid/ui.jqgridffe4.css?0820" rel="stylesheet">
+    <link href="css/plugins/toastr/toastr.min.css" rel="stylesheet">
+
+    <!-- HTML5 shiv and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="js/html5shiv.js"></script>
+    <script src="js/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+
+<!-- Header Start -->
+<header>
+    <a class="logo" href="index.html" style="width: 500px">
+        <!--<img src="img/logo.png" alt="Logo"/>-->
+        <span id="systemTitle" style="font-family:黑体;font-size:25px;font-weight:bold;color:#0089BF"></span>
+    </a>
+    <div class="pull-right">
+        <ul class="clearfix" id="mini-nav">
+            <li class="list-box hidden-xs">
+                <a data-target="#modalMd" data-toggle="modal" href="#">
+                    <span class="text-white">Code</span> <i class="fa fa-code"></i>
+                </a>
+                <!-- Modal -->
+                <div aria-hidden="true" aria-labelledby="myModalLabel5" class="modal fade" id="modalMd" role="dialog"
+                     tabindex="-1">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button aria-hidden="true" class="close" data-dismiss="modal" type="button">&times;
+                                </button>
+                                <h4 class="modal-title text-danger" id="myModalLabel5">Coding Style </h4>
+                            </div>
+                            <div class="modal-body">
+                                <img alt="Esquare Admin" src="img/documentation.png">
+                            </div>
+                            <div class="modal-footer">
+                                <button class="btn btn-danger" data-dismiss="modal" type="button"><i
+                                        class="fa fa-times"></i> Close
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li class="list-box dropdown">
+                <a class="dropdown-toggle" data-toggle="dropdown" href="#" id="drop5" role="button">
+                    <i class="fa fa-film"></i>
+                </a>
+                <span class="info-label info-bg">9+</span>
+                <ul class="dropdown-menu stats-widget clearfix">
+                    <li>
+                        <h5 class="text-success">$37895</h5>
+                        <p>Revenue <span class="text-success">+2%</span></p>
+                        <div class="progress progress-mini">
+                            <div aria-valuemax="100" aria-valuemin="0" aria-valuenow="40"
+                                 class="progress-bar progress-bar-success" role="progressbar" style="width: 40%">
+                                <span class="sr-only">40% Complete (success)</span>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <h5 class="text-warning">47,892</h5>
+                        <p>Downloads <span class="text-warning">+39%</span></p>
+                        <div class="progress progress-mini">
+                            <div aria-valuemax="100" aria-valuemin="0" aria-valuenow="40"
+                                 class="progress-bar progress-bar-warning" role="progressbar" style="width: 40%">
+                                <span class="sr-only">40% Complete (warning)</span>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <h5 class="text-danger">28214</h5>
+                        <p>Uploads <span class="text-danger">-7%</span></p>
+                        <div class="progress progress-mini">
+                            <div aria-valuemax="100" aria-valuemin="0" aria-valuenow="40"
+                                 class="progress-bar progress-bar-danger" role="progressbar" style="width: 40%">
+                                <span class="sr-only">40% Complete (danger)</span>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </li>
+            <li class="list-box dropdown">
+                <a class="dropdown-toggle" data-toggle="dropdown" href="#" id="drop5" role="button">
+                    <i class="fa fa-calendar"></i>
+                </a>
+                <span class="info-label success-bg">6</span>
+                <ul class="dropdown-menu server-activity">
+                    <li>
+                        <p><i class="fa fa-flag text-info"></i> Pending request<span class="time">3 hrs</span></p>
+                    </li>
+                    <li>
+                        <p><i class="fa fa-fire text-warning"></i> Server Crashed<span class="time">3mins</span></p>
+                    </li>
+                    <li>
+                        <p><i class="fa fa-user text-success"></i> 3 New users<span class="time">1 min</span></p>
+                    </li>
+                    <li>
+                        <p><i class="fa fa-bell text-danger"></i>9 pending requests<span class="time">5 min</span></p>
+                    </li>
+                    <li>
+                        <p><i class="fa fa-plane text-info"></i> Performance<span class="time">25 min</span></p>
+                    </li>
+                    <li>
+                        <p><i class="fa fa-envelope text-warning"></i>12 new emails<span class="time">25 min</span></p>
+                    </li>
+                    <li>
+                        <p><i class="fa fa-cog icon-spin text-success"></i> Location settings<span
+                                class="time">4 hrs</span></p>
+                    </li>
+                </ul>
+            </li>
+
+        </ul>
+    </div>
+</header>
+<!-- Header End -->
+
+<!-- Main Container start -->
+<div class="dashboard-container">
+
+    <div class="container">
+        <!-- Top Nav Start -->
+        <div id='cssmenu'>
+            <ul>
+                <li>
+                    <a href='index.html'>
+                        <i class="fa fa-dashboard"></i>
+                        首页
+                    </a>
+                </li>
+                <li>
+                    <a href="devStatus.html">
+                        <i class="fa fa-align-justify"></i>
+                        运行状况
+                    </a>
+                </li>
+
+
+                <li>
+                    <a href="realTimeData.html">
+                        <i class="fa fa-th-list"></i>
+                        实时数据
+                    </a>
+                </li>
+
+
+                <li>
+                    <a href="camera.html">
+                        <i class="fa  fa-video-camera"></i>
+                        图像监控
+                    </a>
+                </li>
+
+
+                <li>
+                    <a href="historyData.html">
+                        <i class="fa fa-clock-o"></i>
+                        历史数据
+                    </a>
+                </li>
+
+
+                <!--    <li>
+                        <a href="#">
+                            <i class="fa fa-bar-chart-o"></i>
+                            统计分析
+                        </a>
+                    </li>-->
+
+                <li class='active'>
+                    <a href="#">
+                        <i class="fa fa-cloud"></i>
+                        终端控制
+                    </a>
+                </li>
+
+
+                <!--                <li>-->
+                <!--                    <a href="Debug.html">-->
+                <!--                        <i class="fa fa-bug"></i>-->
+                <!--                        运维调试-->
+                <!--                    </a>-->
+                <!--                </li>-->
+
+
+            </ul>
+        </div>
+        <!-- Top Nav End -->
+
+
+        <!-- Dashboard Wrapper Start -->
+        <div class="dashboard-wrapper-lg" style="min-height:520px">
+
+
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="panel panel-success">
+                        <div class="panel-heading">
+                            <h4 class="panel-title"><i class="icon ion-clock text-success"></i> 选择设备</h4>
+                        </div>
+                        <div class="panel-body">
+
+                            <div class="col-lg-2">
+
+                                <input class="form-control" id="cdeviceId"
+                                       placeholder="输入设备ID" type="text">
+
+                            </div>
+
+
+                            <div class="col-lg-2">
+                                <div class="input-group">
+                                    <input class="form-control" id="cmdType" placeholder="选择命令类型"
+                                           type="text">
+                                    <div class="input-group-btn">
+                                        <button class="btn btn-white dropdown-toggle" data-toggle="dropdown"
+                                                type="button">
+                                            <span class="caret"></span>
+                                        </button>
+                                        <ul class="dropdown-menu dropdown-menu-right" role="menu">
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <div class="col-lg-2">
+                                <div class="input-group">
+                                    <button class="btn btn-primary " onclick="sendCmd()"
+                                            type="button">
+                                        <i class="fa fa-android"></i> <span class="bold">发送命令</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-lg-12">
+
+                    <div class="panel panel-info">
+                        <div class="panel-heading">
+                            <h4 class="panel-title"><i class="icon ion-clock text-info"></i>命令编辑区</h4>
+                        </div>
+                        <div class="panel-body" id="cmdHtml">
+
+
+                        </div>
+
+
+                    </div>
+
+                </div>
+            </div>
+
+
+            <div class="row">
+
+
+                <div class="col-lg-6">
+
+                    <div class="panel panel-info">
+                        <div class="panel-heading">
+                            <h4 class="panel-title"><i class="icon ion-clock text-info"></i>发送缓冲区</h4>
+                        </div>
+                        <div class="panel-body">
+
+
+                            <div style="float:left;width:100%;">
+                                <textarea id="sendMsg" style="width:100%;height: 300px"></textarea>
+                            </div>
+
+
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="col-lg-6">
+
+                    <div class="panel panel-info">
+                        <div class="panel-heading">
+                            <h4 class="panel-title"><i class="icon ion-clock text-info"></i>接收缓存区</h4>
+                        </div>
+                        <div class="panel-body">
+
+
+                            <div style="float:left;width:100%;">
+                                <textarea id="recMsg" style="width:100%;height: 300px"></textarea>
+                            </div>
+
+
+                        </div>
+                    </div>
+
+                </div>
+
+
+            </div>
+
+
+         <!--   <div class="row">
+                <div class="col-lg-12">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h4 class="panel-title"><i class="icon ion-clock text-success"></i>设备列表</h4>
+                        </div>
+                        <div class="panel-body">
+
+                            <div class="jqGrid_wrapper">
+                                <table id="deviceTable"></table>
+                                <div id="deviceTablePager"></div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>-->
+
+
+
+        </div>
+
+
+    </div>
+
+
+    <footer>
+        <p id="companyName"></p>
+    </footer>
+
+</div>
+
+<!-- Main Container end -->
+
+<script src="js/jquery.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/jquery.scrollUp.js"></script>
+
+<!-- jQuery UI JS -->
+<script src="js/jquery-ui-v1.10.3.js"></script>
+
+<!-- Just Gage -->
+<!--<script src="js/justgage/justgage.js"></script>-->
+<script src="js/justgage/raphael.2.1.0.min.js"></script>
+
+<!-- Flot Charts -->
+<script src="js/flot/jquery.flot.js"></script>
+<script src="js/flot/jquery.flot.orderBar.min.js"></script>
+<script src="js/flot/jquery.flot.stack.min.js"></script>
+<script src="js/flot/jquery.flot.pie.min.js"></script>
+<script src="js/flot/jquery.flot.tooltip.min.js"></script>
+<script src="js/flot/jquery.flot.resize.min.js"></script>
+
+
+<!-- Custom JS -->
+<script src="js/menu.js"></script>
+
+<script src="js/common.js"></script>
+<script src="js/plugins/jqgrid/i18n/grid.locale-cnffe4.js?0820"></script>
+<script src="js/plugins/jqgrid/jquery.jqGrid.minffe4.js?0820"></script>
+<script src="js/plugins/suggest/bootstrap-suggest.min.js"></script>
+<script src="js/plugins/layer/laydate/laydate.js"></script>
+<script src="js/plugins/toastr/toastr.min.js"></script>
+
+<script type="text/javascript">
+
+
+
+    var token = GetData("../getToken",null);
+    var tokenData = JSON.parse(token.result);
+
+    document.getElementById("systemTitle").innerHTML = "&nbsp;"+tokenData.systemTitle;
+    document.getElementById("companyName").innerHTML = "©&nbsp;"+tokenData.companyName+"&nbsp;2020";
+
+
+
+    function getDataZC(title, id) {
+
+
+        var html1 = "<label>\n" +
+            "                                    <input name='zc' id=\"" + id + "\" type=\"checkbox\" checked=\"checked\"> " + title + "\n" +
+            "                                </label>&nbsp;&nbsp;";
+
+
+        return html1;
+    }
+
+
+    function getSensorConfigHtml(title, id) {
+        var html = "   <div class=\"invoice\" style=\"border:none\">\n" +
+            "                                    <div class=\"invoice-head\" style=\"height: 28px\">\n" +
+            "                                        <span >" + title + "</span> <input hidden='hidden' name='sensor' value=\'" + id + "\'>" +
+            "                                    </div>\n" +
+            "                                    <br>\n" +
+            "                                    <div  class=\"row\">\n" +
+            "                                        <div class=\"col-lg-3\">\n" +
+            "                                            <label> <input checked=\"checked\" id=\"" + id + "_EA\" type=\"checkbox\"> 传感器起禁用开关 </label>\n" +
+            "                                        </div>\n" +
+            "                                        <div class=\"col-lg-3\">\n" +
+            "                                            <div class=\"row\">\n" +
+            "                                                <label class=\"col-lg-4\">增量报阈值</label>\n" +
+            "                                                <div class=\"col-lg-8\">\n" +
+            "                                                    <input class=\"form-control\" id=\"" + id + "_increment\" value='10' type=\"text\">\n" +
+            "                                                </div>\n" +
+            "                                            </div>\n" +
+            "                                        </div>\n" +
+            "                                        <div class=\"col-lg-3\">\n" +
+            "                                            <div class=\"row\">\n" +
+            "                                                <label class=\"col-lg-4\">采样周期</label>\n" +
+            "                                                <div class=\"col-lg-8\">\n" +
+            "                                                    <input class=\"form-control\" id=\"" + id + "_interval\" value='10' type=\"text\">\n" +
+            "                                                </div>\n" +
+            "                                            </div>\n" +
+            "                                        </div>\n" +
+            "                                    </div>\n" +
+            "                                </div>";
+
+        return html;
+    }
+
+    function getRtuHtml1(title, id) {
+        var html = "<label>\n" +
+            "                                    <input name='rtur' id=\"" + id + "\" type=\"checkbox\" checked=\"checked\"> " + title + "\n" +
+            "                                </label>&nbsp;&nbsp;";
+
+        return html
+    }
+
+
+    function getRtuHtml2(title, id) {
+        id = "rtu";
+        var html = "   <div class=\"invoice\" style=\"border:none\">\n" +
+            "\n" +
+            "                                    <div class=\"invoice-head\" style=\"height: 28px\">\n" +
+            "                                        <span>" + title + "</span>\n" +
+            "                                    </div>\n" +
+            "                                    <br>\n" +
+            "                                    <div class=\"row\">\n" +
+            "                                        <div class=\"col-lg-3\">\n" +
+            "                                            <div class=\"row\">\n" +
+            "                                                <label class=\"col-lg-4\">心跳周期</label>\n" +
+            "                                                <div class=\"col-lg-8\">\n" +
+            "                                                    <input class=\"form-control\" id='heartInterval' value='2' type=\"text\">\n" +
+            "                                                </div>\n" +
+            "                                            </div>\n" +
+            "                                        </div>\n" +
+            "                                        <div class=\"col-lg-3\">\n" +
+            "                                            <div class=\"row\">\n" +
+            "                                                <label class=\"col-lg-4\">数据报间隔</label>\n" +
+            "                                                <div class=\"col-lg-8\">\n" +
+            "                                                    <input class=\"form-control\" id='dataInterval' value='10' type=\"text\">\n" +
+            "                                                </div>\n" +
+            "                                            </div>\n" +
+            "                                        </div>\n" +
+            "                                        <div class=\"col-lg-3\">\n" +
+            "                                            <div class=\"row\">\n" +
+            "                                                <label class=\"col-lg-4\">设备ID</label>\n" +
+            "                                                <div class=\"col-lg-8\">\n" +
+            "                                                    <input class=\"form-control\" id='deviceId'  value=\"" + $("#cdeviceId").val() + "\"  type=\"text\">\n" +
+            "                                                </div>\n" +
+            "                                            </div>\n" +
+            "                                        </div>\n" +
+            "                                    </div>\n" +
+            "                                </div>";
+
+        return html;
+
+    }
+
+
+    // $.jgrid.defaults.styleUI = "Bootstrap";
+    //
+    //
+    // $("#deviceTable").jqGrid(
+    //     {
+    //         url: null,
+    //         datatype: "json",
+    //         mtype: 'POST',
+    //         height: 450,
+    //         autowidth: true,
+    //         rowNum: 10,
+    //         rowList: [10, 20, 30],
+    //         colNames: ["测站编码", "设备地址", "注册时间", "活动时间"],
+    //         colModel: [
+    //             {
+    //                 name: "deviceId",
+    //                 index: "deviceId",
+    //                 width: 20,
+    //                 sortable: false,
+    //                 key: true
+    //             },
+    //             {
+    //                 name: "remoteAddress",
+    //                 index: "remoteAddress",
+    //                 width: 20,
+    //                 sortable: false,
+    //                 key: true
+    //             },
+    //             {
+    //                 name: "regDate",
+    //                 index: "regDate",
+    //                 width: 40,
+    //                 sortable: false,
+    //                 key: true,
+    //                 formatter: function (cellValue,
+    //                                      options, rowObject) {
+    //                     return DateFormat(cellValue);
+    //                 }
+    //             },
+    //             {
+    //                 name: "activeDate",
+    //                 index: "activeDate",
+    //                 editable: true,
+    //                 width: 40,
+    //                 sortable: false,
+    //                 formatter: function (cellValue,
+    //                                      options, rowObject) {
+    //                     return DateFormat(cellValue);
+    //                 }
+    //             }
+    //         ],
+    //         pager: "#deviceTablePager",
+    //         viewrecords: true,
+    //         /* 	caption : "jqGrid 示例2", */
+    //         add: true,
+    //         edit: true,
+    //         addtext: "Add",
+    //         edittext: "Edit",
+    //         hidegrid: false,
+    //
+    //     });
+    //
+    //
+    // $(window).bind("resize", function () {
+    //     var width = $(".jqGrid_wrapper").width();
+    //
+    //
+    //     $("#deviceTable").setGridWidth(width);
+    //
+    // });
+
+
+    function getCmdJson(deviceId, cmdId) {
+
+        cmdJson = GetData("../getCmdMessage?deviceId=" + deviceId + "&cmdId=" + cmdId, null);
+
+        var sonserData = GetData("../getSensor", {"deviceId": deviceId});
+
+
+        var str = "";
+
+        if (cmdId == 0) {
+
+
+            for (var i = 0; i < sonserData.length; i++) {
+
+
+                str = str + getDataZC(sonserData[i].propertyName, sonserData[i].sensorField);
+            }
+            str = "<div class=\"checkbox\">" + str + "</div>";
+
+        } else if (cmdId == 1) {
+
+
+            for (var i = 0; i < sonserData.length; i++) {
+                str = str + getDataZC(sonserData[i].propertyName, sonserData[i].sensorField);
+            }
+            str = "<div class=\"checkbox\">" + str + "</div>";
+        } else if (cmdId == 2) {
+
+
+            for (var i = 0; i < sonserData.length; i++) {
+                str = str + getSensorConfigHtml(sonserData[i].propertyName, sonserData[i].sensorField);
+            }
+            str = "    <div class=\"col-lg-12\">" + str + "</div>";
+        } else if (cmdId == 3) {
+            var readRtuConfig = ["heartInterval", "dataInterval", "deviceId"];
+            var rtuTitles = ["心跳周期", "数据报间隔", "设备ID"];
+            for (var i = 0; i < readRtuConfig.length; i++) {
+                str = str + getRtuHtml1(rtuTitles[i], readRtuConfig[i]);
+            }
+            str = "<div class=\"checkbox\">" + str + "</div>";
+
+        } else if (cmdId == 4) {
+
+            str = getRtuHtml2("RTU配置", "rtu");
+
+            str = "<div class=\"col-lg-12\">" + str + "</div>";
+
+        }
+
+
+        document.getElementById('cmdHtml').innerHTML = str;
+
+    }
+
+
+    var cmdId = null;
+
+
+    $("#cmdType").bsSuggest({
+        effectiveFields: ["cmdId"],
+        keyField: "cmdId",
+        data: {
+            'value': [{
+                'id': '0',
+                'cmdId': '数据召测'
+            }, {
+                'id': '1',
+                'cmdId': '传感器参数查询'
+            }, {
+                'id': '2',
+                'cmdId': '传感器参数配置'
+            }, {
+                'id': '3',
+                'cmdId': 'RTU参数查询'
+            }, {
+                'id': '4',
+                'cmdId': 'RTU参数配置'
+            }
+            ]
+        }
+    }).on(
+        'onSetSelectValue',
+        function (e, keyword) {
+
+            if ($("#cdeviceId").val().trim().length < 1) {
+
+                warningMsg("请输入正确的设备id");
+                return;
+            }
+
+            cmdId = keyword.id;
+
+            getCmdJson($("#cdeviceId").val().trim(), keyword.id);
+
+
+        });
+
+
+    function sendCmd() {
+
+        if (cmdId == null) {
+            warningMsg("选择指令类型");
+            return;
+        }
+
+        var cmd = new Object();
+
+        cmd.deviceId = $("#cdeviceId").val().trim();
+        cmd.date = (new Date()).valueOf();
+
+
+        if (cmdId == 0) {
+            cmd.msgType = 3;
+            var dataSelect = new Array();
+            var obj = document.getElementsByName('zc');
+            for (var i = 0; i < obj.length; i++) {
+                if (obj[i].checked == true) {
+                    dataSelect.push(obj[i].id);
+                }
+            }
+
+            cmd.dataSelect = dataSelect;
+
+        } else if (cmdId == 1) {
+            cmd.msgType = 5;
+            var readSensorConfig = new Array();
+            var obj = document.getElementsByName('zc');
+            for (var i = 0; i < obj.length; i++) {
+                if (obj[i].checked == true) {
+                    readSensorConfig.push(obj[i].id);
+                }
+            }
+
+            cmd.readSensorConfig = readSensorConfig;
+
+        } else if (cmdId == 2) {
+            cmd.msgType = 4;
+            var writeSensorConfig = new Object();
+
+            var obj = document.getElementsByName('sensor');
+
+            for (var i = 0; i < obj.length; i++) {
+                var sensorPar = new Object();
+
+                if ( $("#" + obj[i].value + "_EA").prop("checked") == true) {
+                    sensorPar.EA = 1;
+                } else sensorPar.EA = 0;
+
+
+                sensorPar.increment = parseInt($("#" + obj[i].value + "_increment").val());
+                sensorPar.interval = parseInt($("#" + obj[i].value + "_interval").val());
+                writeSensorConfig[obj[i].value] = sensorPar;
+            }
+            cmd.writeSensorConfig = writeSensorConfig;
+        } else if (cmdId == 3) {
+            cmd.msgType = 8;
+            var readRtuConfig = new Array();
+            var obj = document.getElementsByName('rtur');
+            for (var i = 0; i < obj.length; i++) {
+                if (obj[i].checked == true) {
+                    readRtuConfig.push(obj[i].id);
+                }
+            }
+
+            cmd.readRtuConfig = readRtuConfig;
+
+        } else if (cmdId == 4) {
+
+            cmd.msgType = 7;
+
+            var writeRtuConfig = new Object();
+            writeRtuConfig.dataInterval = parseInt($("#dataInterval").val());
+            writeRtuConfig.heartInterval = parseInt($("#heartInterval").val());
+            writeRtuConfig.deviceId = $("#deviceId").val();
+
+            cmd.writeRtuConfig = writeRtuConfig;
+        }
+
+        var cmdJson = JSON.stringify(cmd);
+
+        document.getElementById('sendMsg').innerText = cmdJson;
+
+        wsSendMsg($("#cdeviceId").val().trim(),cmdJson);
+
+
+
+    }
+
+    var websocket = null;
+    //判断当前浏览器是否支持WebSocket
+    if ('WebSocket' in window) {
+        websocket = new WebSocket("ws://39.98.164.168:8080/smartdev/ws");
+    } else {
+        warningMsg("当前浏览器不支持webSocket");
+    }
+
+    //连接发生错误的回调方法
+    websocket.onerror = function() {
+
+        errorMsg("连接失败！");
+
+    };
+
+    //连接成功建立的回调方法
+    websocket.onopen = function() {
+
+
+    }
+
+    //连接关闭的回调方法
+    websocket.onclose = function() {
+
+        warningMsg("连接断开!")
+
+    }
+
+    //监听窗口关闭事件，当窗口关闭时，主动去关闭websocket连接，防止连接还没断开就关闭窗口，server端会抛异常。
+    window.onbeforeunload = function() {
+        closeWebSocket();
+    }
+    //关闭WebSocket连接
+    function closeWebSocket() {
+        websocket.close();
+    }
+
+    function wsSendMsg(deviceId,msg) {
+
+        var serviceId = "smart";
+
+        var spase_serviceId = "";
+        var spase_deviceId = "";
+
+        for (var i = 0; i < (16 - serviceId.length); i++) {
+            spase_serviceId = spase_serviceId + " ";
+        }
+
+        for (var i = 0; i < (16 - deviceId.length); i++) {
+            spase_deviceId = spase_deviceId + " ";
+        }
+
+        if (msg.length > 0) {
+
+            msg = serviceId + spase_serviceId + deviceId + spase_deviceId + msg;
+            websocket.send(msg);
+        }
+
+
+
+    }
+
+    //将消息显示在网页上
+    function setMessageInnerTEXT(TEXT) {
+
+        var tmp = $("#recMsg").val();
+
+        document.getElementById('recMsg').innerText = tmp + TEXT
+            + "-----------------" + DateFormat(new Date()) + "\n";
+    }
+
+    //接收到消息的回调方法
+    websocket.onmessage = function(event) {
+
+        var deviceId = $.trim($("#cdeviceId").val());
+        var msg = event.data;
+
+
+
+        var id = msg.substring(16,32).trim();
+
+        if (deviceId == id) {
+            setMessageInnerTEXT(msg.substring(32,msg.length));
+        }
+    }
+
+
+
+</script>
+
+</body>
+</html>

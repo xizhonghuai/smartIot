@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xmlns:dubbo="http://code.alibabatech.com/schema/dubbo"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+		   http://www.springframework.org/schema/beans/spring-beans.xsd
+		   http://www.springframework.org/schema/context
+		   http://www.springframework.org/schema/context/spring-context-4.3.xsd
+		   http://www.springframework.org/schema/mvc
+		   http://www.springframework.org/schema/mvc/spring-mvc-4.3.xsd
+           http://code.alibabatech.com/schema/dubbo
+           http://code.alibabatech.com/schema/dubbo/dubbo.xsd" >
+
+    <!-- 启用Spring基于annotation的DI,  激活 @Required @Autowired,JSR 250's @PostConstruct, @PreDestroy and @Resource 等标注 -->
+    <context:annotation-config/>
+
+    <!--无需扫描Controller-->
+    <context:component-scan base-package="com">
+        <context:exclude-filter type="annotation" expression="org.springframework.stereotype.Controller"/>
+    </context:component-scan>
+    <!-- 提供spring所有注解方式 -->
+    <mvc:annotation-driven/>
+
+
+
+
+
+    <dubbo:application name="smartTCPSERVER" />
+
+    <dubbo:registry protocol="zookeeper" address="39.98.164.168:2181"></dubbo:registry>
+
+    <dubbo:reference id="DBAService" interface="com.dbaccess.DBAService" timeout="6000" />
+
+
+
+
+    <bean id="springBeanUtils" class="com.common.SpringBeanUtils"/>
+
+
+
+
+    <bean id="smart" class="com.transportlayer.Tcp">
+        <property name="serviceId" value="smart"></property>
+        <property name="Handler" value="com.protocol.SmartHandler"></property>
+        <property name="port">
+            <list>
+                <value>8888</value>
+            </list>
+        </property>
+        <property name="idle" value="300"></property>
+        <property name="decodecharset" value="ISO-8859-1"></property>
+        <property name="encodecharset" value="ISO-8859-1"></property>
+        <property name="pushUrl" value="http://127.0.0.1:8081/topiot/push"></property>
+        <property name="pushflag">
+            <value>false</value>
+        </property>
+        <property name="debugflag">
+            <value>true</value>
+        </property>
+        <property name="toServiceId" value="smart"></property>
+    </bean>
+
+
+    <bean id="eq" class="com.transportlayer.MyClient">
+        <property name="handler" value="com.protocol.TestHandler"></property>
+        <property name="host" value="47.108.21.58"></property>
+        <property name="port" value="10086"></property>
+    </bean>
+
+
+    <bean id="debug" class="com.debug.DebugService">
+        <property name="port">
+            <list>
+                <value>8890</value>
+            </list>
+        </property>
+    </bean>
+
+
+
+
+
+
+
+
+
+
+
+
+
+</beans>

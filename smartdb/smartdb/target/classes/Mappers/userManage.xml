@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.dao.Mappers">
+
+    <select id="getUser" parameterType="com.entity.User" resultType="com.entity.User">
+        select * from userInfo
+        <where>
+            <if test="userName != null">  userName like"%"#{userName}"%"</if>
+        </where>
+    </select>
+
+
+    <insert id="addUser" parameterType="com.entity.User">
+            insert into userinfo
+            (userName,userPassword,CompanyName,realName,telephone,authorizationId,systemId,systemTitle,regDate)
+            values(#{userName},#{userPassword},#{CompanyName},#{realName},#{telephone},#{authorizationId},#{systemId},#{systemTitle},#{regDate})
+
+    </insert>
+
+    <insert id="updateUser" parameterType="com.entity.User">
+
+        <if test="userName != null">
+
+            update userinfo
+            <set>
+                <if test="userPassword != null">
+                    userPassword = #{userPassword},
+                </if>
+                <if test="CompanyName != null">
+                    CompanyName = #{CompanyName},
+                </if>
+                <if test="realName != null">
+                    realName = #{realName},
+                </if>
+                <if test="telephone != null">
+                    telephone = #{telephone},
+                </if>
+
+                <if test="authorizationId != null">
+                    authorizationId = #{authorizationId},
+                </if>
+                <if test="systemTitle != null">
+                    systemTitle = #{systemTitle}
+                </if>
+
+            </set>
+            where  userName = #{userName}
+        </if>
+    </insert>
+
+
+
+
+	
+
+
+</mapper>

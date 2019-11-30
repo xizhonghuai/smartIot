@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.dao.Mappers">
+
+    <insert id="addDeviceBasicsInfo" parameterType="com.entity.DeviceData">
+        <if test="deviceId != null">
+            insert into devicebasicsinfo
+            (deviceId,deviceName,areaId,dtuId,company,mangerTel,address,longitude,latitude,remark,regDate)
+            values(#{deviceId},#{deviceName},#{areaId},#{dtuId},#{company},#{mangerTel},#{address},#{longitude},#{latitude},#{remark},#{regDate})
+        </if>
+    </insert>
+
+
+    <insert id="addDeviceAuthorize" parameterType="com.entity.DeviceData">
+            insert into deviceauthen (deviceId,userId) values(#{deviceId},#{userId})
+    </insert>
+
+    <delete id="deleteDeviceAuthorize">
+        <if test="deviceId != null and userId !=null">
+            delete from deviceauthen where deviceId=#{deviceId} and userId =#{userId}
+        </if>
+    </delete>
+
+
+    <select id="getDeviceRealTimeData" parameterType="com.entity.DeviceData" resultType="com.entity.DeviceData">
+
+        -- a:设备信息
+        -- b:区域信息
+
+        <if test="params2 == 0">
+            SELECT A.*,B.areaname,B.cityName,B.cityId FROM
+            (select realtimestatus.*,
+            devicebasicsinfo.deviceName,
+            devicebasicsinfo.dtuId,
+            devicebasicsinfo.company,
+            devicebasicsinfo.mangerTel,
+            devicebasicsinfo.address,
+            devicebasicsinfo.areaId
+            FROM realtimestatus left join devicebasicsinfo on realtimestatus.deviceId = devicebasicsinfo.deviceId ) as a
+            LEFT
+            JOIN
+            (SELECT city.id as cityId,city.cityName,area.id as aid,area.areaname from area LEFT JOIN city on city.id =
+            area.cityId) as B
+            on A.areaId = B.aid
+            <where>
+                <if test="deviceId != null">a.deviceId = #{deviceId}</if>
+                <if test="deviceName != null">and a.deviceName like"%"#{deviceName}"%"</if>
+                <if test="areaId != null">and a.areaId = #{areaId}</if>
+                <if test="cityId != null">and b.cityId = #{cityId}</if>
+                <if test="params1 ==1">and TIMESTAMPDIFF(MINUTE , A.cyDate,SYSDATE()) &lt; 120</if>   <!-- 在线 -->
+                <if test="params1 ==2">and TIMESTAMPDIFF(MINUTE , A.cyDate,SYSDATE()) &gt;= 120</if>      <!-- 离线 -->
+                <if test="userId !=null">and a.deviceId in (select deviceauthen.deviceId from deviceauthen where userId
+                    =
+                    #{userId} )
+                </if>      <!-- 离线 -->
+
+
+            </where>
+        </if>
+
+
+        <if test="params2 == 1">
+
+            SELECT A.*,B.areaname,B.cityName,B.cityId FROM
+            (
+            SELECT  S.*,sensorbind.propertyName,sensorbind.unit,sensorbind.warnR,sensorbind.warnY from
+            (select
+            realtimedata.*,
+            devicebasicsinfo.deviceName,
+            devicebasicsinfo.dtuId,
+            devicebasicsinfo.company,
+            devicebasicsinfo.mangerTel,
+            devicebasicsinfo.address,
+            devicebasicsinfo.areaId
+            FROM realtimedata left join devicebasicsinfo on realtimedata.deviceId = devicebasicsinfo.deviceId) as S LEFT
+            JOIN sensorbind on sensorbind.deviceId = s.deviceId and s.sensorField = sensorbind.sensorField
+            ) as a
+            LEFT
+            JOIN
+            (SELECT city.id as cityId,city.cityName,area.id as aid,area.areaname from area LEFT JOIN city on city.id =
+            area.cityId) as B
+            on A.areaId = B.aid
+
+            <where>
+                <if test="deviceId != null">a.deviceId = #{deviceId}</if>
+                <if test="deviceName != null">and a.deviceName like"%"#{deviceName}"%"</if>
+                <if test="areaId != null">and a.areaId = #{areaId}</if>
+                <if test="cityId != null">and b.cityId = #{cityId}</if>
+<!--                <if test="params1 ==1">and TIMESTAMPDIFF(MINUTE , A.cyDate,SYSDATE()) &lt; 120</if>   &lt;!&ndash; 在线 &ndash;&gt;-->
+<!--                <if test="params1 ==2">and TIMESTAMPDIFF(MINUTE , A.cyDate,SYSDATE()) &gt;= 120</if>      &lt;!&ndash; 离线 &ndash;&gt;-->
+                <if test="userId !=null">and a.deviceId in (select deviceauthen.deviceId from deviceauthen where userId
+                    =
+                    #{userId} )
+                </if>      <!-- 离线 -->
+
+
+            </where>
+        </if>
+    </select>
+
+
+    <select id="getDeviceHistoryData" parameterType="com.entity.DeviceData" resultType="com.entity.DeviceData">
+
+        SELECT A.*,B.areaname,B.cityName,B.cityId FROM
+        (select historydata.*,
+        devicebasicsinfo.deviceName,
+        devicebasicsinfo.dtuId,
+        devicebasicsinfo.company,
+        devicebasicsinfo.mangerTel,
+        devicebasicsinfo.address,
+        devicebasicsinfo.areaId
+        FROM historydata left join devicebasicsinfo on historydata.deviceId = devicebasicsinfo.deviceId ) as a
+        LEFT
+        JOIN
+        (SELECT city.id as cityId,city.cityName,area.id as aid,area.areaname from area LEFT JOIN city on city.id =
+        area.cityId) as B
+        on A.areaId = B.aid
+        <where>
+            <if test="deviceId != null">a.deviceId = #{deviceId}</if>
+            <if test="deviceName != null">and a.deviceName like"%"#{deviceName}"%"</if>
+            <if test="areaId != null">and a.areaId = #{areaId}</if>
+            <if test="cityId != null">and b.cityId = #{cityId}</if>
+            <if test="params1 != null">and a.cyDate &gt;= #{params1}</if>
+            <if test="params2 != null">and a.cyDate &lt;= #{params2}</if>
+
+
+
+            <if test="userId !=null">and a.deviceId in (select deviceauthen.deviceId from deviceauthen where userId = #{userId} )
+            </if>
+
+
+        </where>
+
+
+
+    </select>
+
+
+    <select id="getDeviceBasicsInfo" parameterType="com.entity.DeviceData" resultType="com.entity.DeviceData">
+
+        select * from devicebasicsinfo LEFT JOIN
+        (SELECT city.id as cityId, city.cityName,area.id as aid,area.areaname from area LEFT JOIN city on city.id =
+        area.cityId) as ca ON
+        ca.aid = devicebasicsinfo.areaId
+        <where>
+            <if test="deviceId != null">deviceId = #{deviceId}</if>
+            <if test="deviceName != null">and deviceName like"%"#{deviceName}"%"</if>
+            <if test="areaId != null">and areaId = #{areaId}</if>
+            <if test="cityId != null">and ca.cityId = #{cityId}</if>
+            <if test="userId !=null">and deviceId in (select deviceauthen.deviceId from deviceauthen where userId =
+                #{userId} )
+            </if>
+        </where>
+    </select>
+
+
+    <update id="updateDeviceBasicsInfo" parameterType="com.entity.DeviceData">
+
+        <if test="deviceId != null">
+
+            update devicebasicsinfo
+            <set>
+                <if test="deviceName != null">
+                    deviceName = #{deviceName},
+                </if>
+                <if test="areaId != null">
+                    areaId = #{areaId},
+                </if>
+                <if test="dtuId != null">
+                    dtuId = #{dtuId},
+                </if>
+                <if test="company != null">
+                    company = #{company},
+                </if>
+                <if test="mangerTel != null">
+                    mangerTel = #{mangerTel},
+                </if>
+                <if test="address != null">
+                    address = #{address},
+                </if>
+                <if test="longitude != null">
+                    longitude = #{longitude},
+                </if>
+                <if test="latitude != null">
+                    latitude = #{latitude},
+                </if>
+                <if test="address != null">
+                    remark = #{remark},
+                </if>
+            </set>
+            where deviceId = #{deviceId}
+        </if>
+    </update>
+
+    <delete id="deleteDeviceBasicsInfo" parameterType="com.entity.DeviceData">
+        <if test="deviceId !=null">
+
+            delete from devicebasicsinfo where deviceId=#{deviceId}
+
+        </if>
+    </delete>
+
+
+
+
+    <update id="updateDeviceRealTimeData" parameterType="com.entity.DeviceData">
+
+        <if test="deviceId != null and sensorField !=null">
+
+            update realtimedata
+            <set>
+                <if test="sensorStatus != null">
+                    sensorStatus = #{sensorStatus},
+                </if>
+
+
+                <if test="valueAsNumber != null">
+                    valueAsNumber = #{valueAsNumber},
+                </if>
+
+                <if test="warnmsg != null">
+                    warnmsg = #{warnmsg},
+                </if>
+
+                <if test="cyDate != null">
+                    cyDate = #{cyDate},
+                </if>
+            </set>
+            where deviceId = #{deviceId} and sensorField = #{sensorField}
+        </if>
+    </update>
+
+
+</mapper>

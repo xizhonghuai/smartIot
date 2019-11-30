@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>物联网数据监测平台</title>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Blue Moon - Responsive Admin Dashboard"/>
+    <meta name="keywords"
+          content="Notifications, Admin, Dashboard, Bootstrap3, Sass, transform, CSS3, HTML5, Web design, UI Design, Responsive Dashboard, Responsive Admin, Admin Theme, Best Admin UI, Bootstrap Theme, Wrapbootstrap, Bootstrap, bootstrap.gallery"/>
+    <meta name="author" content="Bootstrap Gallery"/>
+    <link rel="shortcut icon" href="img/favicon.ico">
+
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/new.css" rel="stylesheet">
+    <link href="css/charts-graphs.css" rel="stylesheet">
+    <!-- Datepicker CSS -->
+    <link rel="stylesheet" type="text/css" href="css/datepicker.css">
+
+    <link href="fonts/font-awesome.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="http://cache.amap.com/lbs/static/main1119.css"/>
+
+
+    <link href="https://a.amap.com/jsapi_demos/static/demo-center/css/demo-center.css" rel="stylesheet"/>
+
+
+    <!-- HTML5 shiv and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="js/html5shiv.js"></script>
+    <script src="js/respond.min.js"></script>
+    <![endif]-->
+
+    <style>
+        .xline {
+            border-bottom: solid 1px #dfe9ee;
+            height: 5px;
+        }
+    </style>
+</head>
+
+<body>
+
+<!-- Header Start -->
+<header>
+    <a href="index.html" class="logo" style="width: 500px">
+        <!--<img src="img/logo.png" alt="Logo"/>-->
+        <span id="systemTitle" style="font-family:黑体;font-size:25px;font-weight:bold;color:#0089BF"></span>
+    </a>
+    <div class="pull-right">
+        <ul id="mini-nav" class="clearfix">
+            <li class="list-box hidden-xs">
+                <a href="#" data-toggle="modal" data-target="#modalMd">
+                    <span class="text-white">Code</span> <i class="fa fa-code"></i>
+                </a>
+                <!-- Modal -->
+                <div class="modal fade" id="modalMd" tabindex="-1" role="dialog" aria-labelledby="myModalLabel5"
+                     aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;
+                                </button>
+                                <h4 class="modal-title text-danger" id="myModalLabel5">Coding Style </h4>
+                            </div>
+                            <div class="modal-body">
+                                <img src="img/documentation.png" alt="Esquare Admin">
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-danger" data-dismiss="modal"><i
+                                        class="fa fa-times"></i> Close
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li class="list-box dropdown">
+                <a id="drop5" href="#" role="button" class="dropdown-toggle" data-toggle="dropdown">
+                    <i class="fa fa-film"></i>
+                </a>
+                <span class="info-label info-bg">9+</span>
+                <ul class="dropdown-menu stats-widget clearfix">
+                    <li>
+                        <h5 class="text-success">$37895</h5>
+                        <p>Revenue <span class="text-success">+2%</span></p>
+                        <div class="progress progress-mini">
+                            <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="40"
+                                 aria-valuemin="0" aria-valuemax="100" style="width: 40%">
+                                <span class="sr-only">40% Complete (success)</span>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <h5 class="text-warning">47,892</h5>
+                        <p>Downloads <span class="text-warning">+39%</span></p>
+                        <div class="progress progress-mini">
+                            <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="40"
+                                 aria-valuemin="0" aria-valuemax="100" style="width: 40%">
+                                <span class="sr-only">40% Complete (warning)</span>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <h5 class="text-danger">28214</h5>
+                        <p>Uploads <span class="text-danger">-7%</span></p>
+                        <div class="progress progress-mini">
+                            <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="40"
+                                 aria-valuemin="0" aria-valuemax="100" style="width: 40%">
+                                <span class="sr-only">40% Complete (danger)</span>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </li>
+            <li class="list-box dropdown">
+                <a id="drop5" href="#" role="button" class="dropdown-toggle" data-toggle="dropdown">
+                    <i class="fa fa-calendar"></i>
+                </a>
+                <span class="info-label success-bg">6</span>
+                <ul class="dropdown-menu server-activity">
+                    <li>
+                        <p><i class="fa fa-flag text-info"></i> Pending request<span class="time">3 hrs</span></p>
+                    </li>
+                    <li>
+                        <p><i class="fa fa-fire text-warning"></i> Server Crashed<span class="time">3mins</span></p>
+                    </li>
+                    <li>
+                        <p><i class="fa fa-user text-success"></i> 3 New users<span class="time">1 min</span></p>
+                    </li>
+                    <li>
+                        <p><i class="fa fa-bell text-danger"></i>9 pending requests<span class="time">5 min</span></p>
+                    </li>
+                    <li>
+                        <p><i class="fa fa-plane text-info"></i> Performance<span class="time">25 min</span></p>
+                    </li>
+                    <li>
+                        <p><i class="fa fa-envelope text-warning"></i>12 new emails<span class="time">25 min</span></p>
+                    </li>
+                    <li>
+                        <p><i class="fa fa-cog icon-spin text-success"></i> Location settings<span
+                                class="time">4 hrs</span></p>
+                    </li>
+                </ul>
+            </li>
+
+        </ul>
+    </div>
+</header>
+<!-- Header End -->
+
+<!-- Main Container start -->
+<div class="dashboard-container">
+
+    <div class="container">
+        <!-- Top Nav Start -->
+        <div id='cssmenu'>
+            <ul>
+                <li class='active'>
+                    <a href='#'>
+                        <i class="fa fa-dashboard"></i>
+                        首页
+                    </a>
+                </li>
+                <li>
+                    <a href="devStatus.html">
+                        <i class="fa fa-align-justify"></i>
+                        运行状况
+                    </a>
+                </li>
+
+
+                <li>
+                    <a href="realTimeData.html">
+                        <i class="fa fa-th-list"></i>
+                        实时数据
+                    </a>
+                </li>
+
+
+                <li>
+                    <a href="camera.html">
+                        <i class="fa  fa-video-camera"></i>
+                        图像监控
+                    </a>
+                </li>
+
+
+                <li>
+                    <a href="historyData.html">
+                        <i class="fa fa-clock-o"></i>
+                        历史数据
+                    </a>
+                </li>
+
+
+                <!--    <li>
+                        <a href="#">
+                            <i class="fa fa-bar-chart-o"></i>
+                            统计分析
+                        </a>
+                    </li>-->
+
+                <li>
+                    <a href="debug.html">
+                        <i class="fa fa-cloud"></i>
+                        终端控制
+                    </a>
+                </li>
+
+
+                <!--                <li>-->
+                <!--                    <a href="Debug.html">-->
+                <!--                        <i class="fa fa-bug"></i>-->
+                <!--                        运维调试-->
+                <!--                    </a>-->
+                <!--                </li>-->
+
+
+            </ul>
+        </div>
+        <!-- Top Nav End -->
+
+
+        <!-- Dashboard Wrapper Start -->
+        <div class="dashboard-wrapper-lg" style="min-height:520px">
+            <div id="container"></div>
+        </div>
+
+
+        <footer>
+            <p id="companyName"></p>
+        </footer>
+
+    </div>
+</div>
+<!-- Main Container end -->
+
+<script src="js/jquery.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/jquery.scrollUp.js"></script>
+
+<!-- jQuery UI JS -->
+<script src="js/jquery-ui-v1.10.3.js"></script>
+
+<!-- Just Gage -->
+<!--<script src="js/justgage/justgage.js"></script>-->
+<script src="js/justgage/raphael.2.1.0.min.js"></script>
+
+<!-- Flot Charts -->
+<script src="js/flot/jquery.flot.js"></script>
+<script src="js/flot/jquery.flot.orderBar.min.js"></script>
+<script src="js/flot/jquery.flot.stack.min.js"></script>
+<script src="js/flot/jquery.flot.pie.min.js"></script>
+<script src="js/flot/jquery.flot.tooltip.min.js"></script>
+<script src="js/flot/jquery.flot.resize.min.js"></script>
+
+<!-- Custom JS -->
+<script src="js/menu.js"></script>
+<!--<script src="js/custom-index2.js"></script>-->
+
+<script src="js/common.js"></script>
+
+
+<script src="http://webapi.amap.com/maps?v=1.4.3&key=c7718b9560aef2d7e882728c6ddc1245"
+        type="text/javascript"></script>
+
+<script src="js/plugins/layerV3.1.1/layer.js"></script>
+
+<script type="text/javascript">
+
+
+    var token = GetData("../getToken",null);
+    var tokenData = JSON.parse(token.result);
+
+    document.getElementById("systemTitle").innerHTML = "&nbsp;"+tokenData.systemTitle;
+	document.getElementById("companyName").innerHTML = "©&nbsp;"+tokenData.companyName+"&nbsp;2020";
+ 
+
+
+
+
+
+
+
+
+    var mapObj = new AMap.Map('container', {
+        mapStyle: 'amap://styles/light',
+        viewMode: '3D',
+        pitch: 60,
+        rotation: -35,
+        // features:['bg','road','point'],//隐藏默认楼块
+        layers: [
+            new AMap.TileLayer.Satellite(),//高德默认标准图层
+            new AMap.Buildings({
+                zooms: [16, 18],
+                zIndex: 10,
+                heightFactor: 2//2倍于默认高度，3D下有效
+            })//楼块图层
+        ],
+        zoom: 16
+
+    });
+
+    var infoWindow = new AMap.InfoWindow({
+        offset: new AMap.Pixel(4, -30)
+    });
+
+    function img_type(time) {
+        var zx = "images/zx.gif";
+        var lx = "images/zx.gif";
+
+        var imgUrl = null;
+
+        if (checkTM(DateFormat(time))) {
+            imgUrl = zx;
+        } else {
+            imgUrl = lx;
+        }
+        var img = new AMap.Icon({
+            image: imgUrl
+        });
+        return img;
+    }
+
+    function createSite(dev) {
+        var point = [dev.latitude, dev.longitude];
+
+        var marker = new AMap.Marker({
+            icon: img_type(dev.cyDate),
+            position: point,
+            extData: dev
+            // animation : "AMAP_ANIMATION_BOUNCE",
+            //					map : mapobj
+        });
+        AMap.event.addListener(marker, 'mouseover',
+            function (e) {
+
+                var info = infobox(e.target.getExtData());
+                // info = dataBox();
+                infoWindow.setContent(info);
+                infoWindow.open(mapObj, e.target
+                    .getPosition());//鼠标点击marker弹出信息窗体
+                mapObj.setCenter(e.target.getPosition());
+
+            });
+
+        AMap.event.addListener(marker, 'dblclick',
+            function (e) {
+
+                mapObj.setZoom(18);
+                mapObj.setCenter(e.target.getPosition());
+            });
+
+
+        return marker;
+    }
+
+    function addMaker(point) {
+
+        var maker = createSite(point);
+        mapObj.add(maker);
+        // mapObj.setZoom(12);
+        // mapObj.setCenter(msgObj.location);
+
+    }
+
+
+     var deviceList = GetData("../getDeviceBasicsInfo",{"userId":tokenData.id});
+
+    
+
+    if (deviceList != null) {
+
+        for (var i = 0; i < deviceList.length; i++) {
+
+
+            addMaker(deviceList[i]);
+        }
+
+
+    }
+
+    function infobox(data) {
+        var title = data.deviceId+data.deviceName;
+        var id = data.deviceId;
+        var html = [];
+        html.push("<div>");
+        html.push("<div>");
+        html
+            .push("<span style=\"float: left;\"> <p style=\"color: #0a5aa0\" onclick='openRealTime(\""+title+"\",\""+id+"\")'"
+                + "</p>"+data.deviceId+"</span>");
+        html.push("</div>");
+        html.push("<br/>");
+        html.push("<div style=\"padding: 0px 0px 0px 0px;\">");
+        html.push("<div class=\"xline\"></div>");
+        html.push("测站名：" + data.deviceName + " <br />");
+        html.push("</div>");
+        html.push("</div>");
+
+        return html.join(" ");
+    }
+
+    function openRealTime(title,id) {
+
+        console.log(title+id);
+
+        url = "map_rtdata.html?deviceId="+id;
+        layer.open({
+            type : 2,
+            // skin : 'layer-ext-moon',
+            title : title,
+            maxmin : false,
+            shadeClose : true, //点击遮罩关闭层
+            area : [ '700px', '320px' ],
+            content : [ url, 'no' ]
+        });
+    }
+
+
+
+
+
+</script>
+
+</body>
+</html>
